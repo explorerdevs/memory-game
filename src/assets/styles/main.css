@@ -21,7 +21,7 @@ Version: 01
     box-sizing: border-box;
     font-size: 56.25%;
     text-rendering: optimizeSpeed;
-    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
   }
 
   @media (min-width: 75em) {
@@ -44,7 +44,7 @@ Version: 01
     box-sizing: inherit;
   }
 
-  :where([hidden]:not([hidden="until-found"])) {
+  :where([hidden]:not([hidden='until-found'])) {
     display: none !important;
   }
 
@@ -88,7 +88,7 @@ Version: 01
   :where(input, button, textarea, select) {
     color: inherit;
   }
-  :where(button, label, select, summary, [role="button"], [role="option"]) {
+  :where(button, label, select, summary, [role='button'], [role='option']) {
     cursor: pointer;
   }
   :where(textarea) {
@@ -116,7 +116,7 @@ Version: 01
     object-fit: cover;
   }
   @media not all and (min-resolution: 0.001dpcm) {
-    :where(img[loading="lazy"]) {
+    :where(img[loading='lazy']) {
       clip-path: inset(0.5px);
     }
   }
@@ -160,24 +160,26 @@ Version: 01
       scroll-behavior: auto !important;
     }
   }
+
+  /*********** TYPOGRAPHY ************/
+  :where(body) {
+    font-size: 1.6rem;
+  }
 }
 
 @tailwind components;
+@layer components {
+}
 @tailwind utilities;
-
 /* ================================= */
 /*            UTILITIES              */
 /* ================================= */
-.h-container {
-  --max-width: 111rem; /*change this*/
-  --container-padding: 1.6rem;
+@layer utilities {
+  .h-container {
+    --max-width: 111rem; /*change this*/
+    --container-padding: 1.6rem;
 
-  width: min(var(--max-width), 100% - (var(--container-padding) * 2));
-  margin-inline: auto;
-}
-:where(.flow > :not(:first-child)) {
-  margin-block-start: var(--flow-space, 1.6rem);
-}
-.flow-space--small {
-  --flow-space: 1rem;
+    width: min(var(--max-width), 100% - (var(--container-padding) * 2));
+    margin-inline: auto;
+  }
 }

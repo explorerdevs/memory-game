@@ -1,8 +1,5 @@
-import Title from './components/Title';
-import SetUp from './components/SetUp';
-import ScoreBoard from "./components/ScoreBoard";
-import GameBoard from './components/GameBoard';
-import { usePlayers, usePairs} from './hooks';
+import { GameBoard, ScoreBoard, Setup, Title } from './components';
+import { usePairs, usePlayers } from './hooks';
 
 function App() {
   const { pairs, setPairs } = usePairs(0);
@@ -11,11 +8,8 @@ function App() {
   return (
     <div className='App'>
       <Title />
-      <SetUp
-        players={players}
-        setPlayers={setPlayers}
-      />
-      <ScoreBoard 
+      <Setup players={players} setPlayers={setPlayers} />
+      <ScoreBoard
         pairs={pairs}
         setPairs={setPairs}
         players={players}

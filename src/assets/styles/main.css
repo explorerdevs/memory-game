@@ -163,6 +163,10 @@ Version: 01
 
   /*********** TYPOGRAPHY ************/
   :where(body) {
+    font-family: Gugi, ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+      'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji';
     font-size: 1.6rem;
   }
 }
@@ -175,11 +179,4 @@ Version: 01
 /*            UTILITIES              */
 /* ================================= */
 @layer utilities {
-  .h-container {
-    --max-width: 111rem; /*change this*/
-    --container-padding: 1.6rem;
-
-    width: min(var(--max-width), 100% - (var(--container-padding) * 2));
-    margin-inline: auto;
-  }
 }

@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [
     react(),
     ghPages({
+      branch: 'docs',
       dest: '/dist',
       user: {
         name: 'Prince Muel',

@@ -1,52 +1,52 @@
 const GameBoard = () => {
   return (
-    <div className="grid grid-cols-4 gap-2 items-center justify-items-center bg-black p-4">
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+    <div className="grid grid-cols-4 items-center justify-items-center gap-2 bg-black p-4">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
-      <p className="bg-primary-300 grid place-content-center w-[4rem] aspect-square rounded-full">
+      <p className="grid aspect-square w-16 place-content-center rounded-full bg-primary-300">
         🤭
       </p>
     </div>

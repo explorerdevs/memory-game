@@ -1,4 +1,4 @@
-import { UsePlayersType } from "../hooks";
+import { UsePlayersType } from '../../hooks';
 
 type Props = UsePlayersType;
 

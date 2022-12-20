@@ -51,8 +51,9 @@ export { useTheme, useSetTheme, ThemeProvider };
 //////////////////////////////////////
 // This useDarkMode hook is not for use.
 // It exists only for the theme provider
+const preferDarkQuery = '(prefers-color-scheme: dark)';
+
 function useDarkMode() {
-  const preferDarkQuery = '(prefers-color-scheme: dark)';
   const [mode, setMode] = React.useState<ThemeMode>(() => {
     const value = window.localStorage.getItem('theme-mode');
     if (value) {
@@ -78,6 +79,7 @@ function useDarkMode() {
 
   React.useEffect(() => {
     window.localStorage.setItem('theme-mode', mode);
+    document.documentElement.setAttribute('data-theme', mode);
   }, [mode]);
 
   // we're doing it this way instead of as an effect so we only

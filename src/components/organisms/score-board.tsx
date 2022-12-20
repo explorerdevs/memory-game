@@ -1,4 +1,4 @@
-import { UsePairsType, UsePlayersType } from '../hooks';
+import { UsePairsType, UsePlayersType } from '../../hooks';
 
 type Props = UsePlayersType & UsePairsType;
 

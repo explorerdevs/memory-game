@@ -6,3 +6,5 @@
   "deploy": "gh-pages -d dist"
 }
 ```
+
+[Image Color Picker](https://imagecolorpicker.com/en)

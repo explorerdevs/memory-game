@@ -1,4 +1,4 @@
-import { GameBoard, ThemeToggle, Title } from './components';
+import { GameBoard, ScoreBoard, ThemeToggle, Title } from './components';
 import { GameProvider, ThemeProvider } from './context';
 
 function App() {
@@ -6,8 +6,7 @@ function App() {
     <ThemeProvider>
       <GameProvider>
         <main className="min-h-screen bg-white dark:bg-black">
-          <header className="">
-            <ThemeToggle />
+          <header className="grid grid-cols-4 grid-rows-4 pt-32">
             <Title />
 
             <button
@@ -25,25 +24,28 @@ function App() {
             >
               Restart
             </button>
+
+            <ThemeToggle classname="col-start-1 col-end-5 row-start-1 row-end-1 justify-self-end" />
           </header>
 
           <div className="h-container">
             <GameBoard />
           </div>
 
-          <footer className="h-container">
-            {/* TIME */}
-            <button type="button" className="">
-              <span>Time</span>
-              <time>0.00</time>
-            </button>
+          <footer className="mx-auto">
+            <div className="flex items-center justify-center gap-8">
+              {/* TIME */}
+              <p className="rounded-lg bg-primary-200 p-6 shadow-md">
+                <span>Time</span>
+                <time>0.00</time>
+              </p>
 
-            {/* MOVES */}
-            <button type="button" className="">
-              <span>Moves</span>
-              <output>0</output>
-            </button>
-            {/* MOVES */}
+              {/* MOVES */}
+              <p className="rounded-lg bg-primary-200 p-6 shadow-md">
+                <span>Moves</span>
+                <output>0</output>
+              </p>
+            </div>
           </footer>
         </main>
       </GameProvider>

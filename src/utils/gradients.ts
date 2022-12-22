@@ -22,6 +22,7 @@ export function getGradient(name?: string) {
     }
     return hash;
   }
+
   if (name) {
     const hash = hashCode(name);
     const index = hash % gradients.length;

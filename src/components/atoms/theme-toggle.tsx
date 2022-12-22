@@ -3,7 +3,7 @@ import { classNames } from '../../utils';
 
 type Props = { classname: string };
 
-const ThemeToggle = (props: Props) => {
+const ThemeToggle = ({ classname }: Props) => {
   const setTheme = useSetTheme();
   const theme = useTheme();
 
@@ -13,7 +13,7 @@ const ThemeToggle = (props: Props) => {
       title="Toggle Theme"
       className={classNames(
         'inline-grid aspect-square w-12 place-content-center rounded-full bg-secondary-300',
-        props.classname && props.classname
+        classname && classname
       )}
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >

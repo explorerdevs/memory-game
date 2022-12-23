@@ -3,6 +3,7 @@ import {
   ReactNode,
   useCallback,
   useContext,
+  useMemo,
   useRef,
   useSyncExternalStore,
 } from 'react';
@@ -39,11 +40,18 @@ export function createAStore<Store>(initalState: Store, prefix = 'Store') {
     };
   }
 
-  type UseStoreDataType = ReturnType<typeof useStoreData>;
+  type StoreType = ReturnType<typeof useStoreData>['get'];
+  type StoreSetterType = ReturnType<typeof useStoreData>['set'];
+  type StoreSubscriberType = ReturnType<typeof useStoreData>['subscribe'];
 
   const STORE_NAME = capitalize(prefix);
 
-  const StoreContext = createContext<UseStoreDataType | null>(null);
+  const StoreContext = createContext<StoreType | null>(null);
+  const StoreSetterContext = createContext<StoreSetterType | null>(null);
+  const StoreSubscriberContext = createContext<StoreSubscriberType | null>(
+    null
+  );
+
   StoreContext.displayName = STORE_NAME + 'Context';
 
   type ProviderProps = {
@@ -51,9 +59,18 @@ export function createAStore<Store>(initalState: Store, prefix = 'Store') {
   };
 
   const StoreProvider = ({ children }: ProviderProps) => {
+    const { get, set, subscribe } = useStoreData();
+
+    const memoizedGet = useMemo(() => get, [get]);
+    const memoizedSet = useMemo(() => set, [set]);
+    const memoizedSubscribe = useMemo(() => subscribe, [subscribe]);
     return (
-      <StoreContext.Provider value={useStoreData()}>
-        {children}
+      <StoreContext.Provider value={memoizedGet}>
+        <StoreSetterContext.Provider value={memoizedSet}>
+          <StoreSubscriberContext.Provider value={memoizedSubscribe}>
+            {children}
+          </StoreSubscriberContext.Provider>
+        </StoreSetterContext.Provider>
       </StoreContext.Provider>
     );
   };
@@ -61,18 +78,21 @@ export function createAStore<Store>(initalState: Store, prefix = 'Store') {
   function useStore<T>(
     selector: (store: Store) => T
   ): [T, (value: Partial<Store>) => void] {
-    const store = useContext(StoreContext);
-    if (!store)
+    const get = useContext(StoreContext);
+    const set = useContext(StoreSetterContext);
+    const subscribe = useContext(StoreSubscriberContext);
+
+    if (get == null || subscribe == null || set == null)
       throw new Error(
         `${STORE_NAME}Store not found. use${STORE_NAME}Store must be used in a ${prefix}Provider`
       );
     const state = useSyncExternalStore(
-      store.subscribe,
-      () => selector(store.get()),
-      () => selector(store.get())
+      subscribe,
+      () => selector(get()),
+      () => selector(get())
     );
 
-    return [state, store.set];
+    return [state, set];
   }
 
   return { StoreProvider, useStore };

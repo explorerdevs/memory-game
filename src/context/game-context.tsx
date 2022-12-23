@@ -1,16 +1,14 @@
-import { createAStore as createGameStore } from './create-store';
+import { createStore as createGameStore } from '../lib';
 
-interface IGameState {
+interface GameState {
   pairs: number;
   players: number;
 }
 
-const { StoreProvider, useStore } = createGameStore<IGameState>(
+export const [GameProvider, useGameStore] = createGameStore<GameState>(
   {
     pairs: 0,
     players: 1,
   },
   'Game'
 );
-
-export { StoreProvider as GameProvider, useStore as useGameStore };

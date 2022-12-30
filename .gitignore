@@ -1,29 +1,3 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # Logs
@@ -33,6 +7,17 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -108,6 +93,7 @@ typings/
 .env
 .env.test
 .env.local
+.env*.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -115,8 +101,17 @@ typings/
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
 # Next.js build output
 .next
+/.next/
+/out/
 
 # Nuxt.js build / generate output
 .nuxt
@@ -146,19 +141,33 @@ dist
 # production
 /build
 
+# Local Netlify folder
+.netlify
+
 # Avoid accidental upload of the Sketch and Figma design files
 #####################################################
-## Please do not remove lines 5 and 6 - thanks! 🙂 ##
+## Please do not remove - thanks! 🙂 ##
 #####################################################
 *.sketch
 *.fig
 
-# Avoid accidental XD upload if you convert the design file
+# Avoid accidental XD upload if the design file is converted
 ###############################################
-## Please do not remove line 12 - thanks! 🙂 ##
+## Please do not remove - thanks! 🙂 ##
 ###############################################
 *.xd
 
 # Avoid your project being littered with annoying .DS_Store files!
 .DS_Store
 .prettierignore
+
+# misc
+dist
+dist-ssr
+design
+*.pem
+
+.local
+*.local.*
+!README.md
+

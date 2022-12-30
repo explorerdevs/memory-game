@@ -83,11 +83,11 @@ This will create a production-ready build in the dist directory.
 
 ## Reporting bugs 🐛
 
-- To report a bug in the dictionary app, you can follow these steps:
+- To report a bug in the Memory Game App, you can follow these steps:
 
-1. Identify the problem: First, you need to determine what the issue is and how it is affecting your use of the app. Be specific and include as much detail as possible. For example, "When I search for the word 'apple', the app crashes" or "The app is not displaying any images for any words I search for."
+1. Identify the problem: First, you need to determine what the issue is and how it is affecting your use of the app. Be specific and include as much detail as possible. For example, 'When I double-click on a card, it counts as one turn' or "The score is incorrect when I use x theme."
 2. Reproduce the issue: Try to reproduce the problem to confirm that it is a bug and not just a one-time occurrence. This can also help you gather more information about the issue.
-3. Collect information about the bug: In order to help the fix the bug, you will need to provide as much information as possible. This may include the the operating system you are using, any error messages or codes you received, and the steps you took to reproduce the bug. You should also note which API you were using (Pexel or Dictionary) and what word you searched for when the bug occurred.
+3. Collect information about the bug: In order to help the fix the bug, you will need to provide as much information as possible. This may include the the operating system you are using, any error messages or codes you received, and the steps you took to reproduce the bug. 
 4. Create a bug report: There are several ways you can create a bug report, including using a bug tracking tool, creating a document or spreadsheet, or even just writing down the information in a note. Be sure to include all of the information you collected about the bug, as well as any suggestions you have for how the issue could be fixed.
 5. Submit the bug report: Once you have created your bug report, you can submit the report through a bug tracking tool by <a href="mailto:hello@ashmoreno.dev">email</a>.
 
